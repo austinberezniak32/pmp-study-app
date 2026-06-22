@@ -1,0 +1,13 @@
+{
+  "name": "pmp-study-app",
+  "version": "1.0.0",
+  "description": "Complete PMP exam study app - flashcards, practice quizzes, study guide, formulas, and PMI mindset trainer.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
