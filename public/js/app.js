@@ -161,7 +161,7 @@
     const timed = document.getElementById("quiz-timed").checked;
     let pool = (domain === "All" ? D.questions : D.questions.filter(q => q.domain === domain)).slice();
     shuffle(pool);
-    pool = pool.slice(0, Math.min(count, pool.length));
+    pool = pool.slice(0, Math.min(count, pool.length)).map(shuffleOptions);
     quiz = { pool, i: 0, correct: 0, answers: [], timed, secs: pool.length * 70 };
     document.getElementById("quiz-setup-area").style.display = "none";
     document.getElementById("quiz-results").style.display = "none";
@@ -298,6 +298,13 @@
   /* ---------- Helpers ---------- */
   function esc(s) { return String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
   function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } }
+  // Return a copy of the question with its options shuffled and answer index remapped,
+  // so the correct answer never sits in a memorizable fixed position.
+  function shuffleOptions(q) {
+    const idx = q.options.map((_, i) => i);
+    shuffle(idx);
+    return { ...q, options: idx.map(i => q.options[i]), answer: idx.indexOf(q.answer) };
+  }
 
   /* ---------- Wire up ---------- */
   document.addEventListener("DOMContentLoaded", () => {

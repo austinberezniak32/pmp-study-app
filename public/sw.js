@@ -1,9 +1,10 @@
 /* PMP Study service worker — offline cache + installability */
-const CACHE = "pmp-study-v1";
+const CACHE = "pmp-study-v3";
 const ASSETS = [
   "/",
   "/index.html",
   "/css/styles.css",
+  "/js/questions.js",
   "/js/data.js",
   "/js/app.js",
   "/icon.svg",
