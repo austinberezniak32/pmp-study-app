@@ -1,0 +1,38 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c83ff"/>
+      <stop offset="0.55" stop-color="#5b54e6"/>
+      <stop offset="1" stop-color="#3f33c2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.25" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bars" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1a1450" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- App-icon rounded square (squircle-ish) -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#glow)"/>
+
+  <!-- Ascending progress bars = study progress -->
+  <g filter="url(#ds)">
+    <rect x="150" y="300" width="46" height="78"  rx="16" fill="url(#bars)" opacity="0.55"/>
+    <rect x="233" y="252" width="46" height="126" rx="16" fill="url(#bars)" opacity="0.78"/>
+    <rect x="316" y="196" width="46" height="182" rx="16" fill="url(#bars)"/>
+  </g>
+
+  <!-- Checkmark badge = pass / achieved -->
+  <g filter="url(#ds)">
+    <circle cx="346" cy="168" r="62" fill="#22c55e"/>
+    <path d="M318 170 l20 22 l40 -50" fill="none" stroke="#ffffff" stroke-width="18"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
