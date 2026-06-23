@@ -863,6 +863,358 @@ window.PMP_QUESTIONS = [
 
   { domain: "Business Environment", q: "A multinational project must respect different countries' laws and customs. What should the project manager do?",
     options: ["Apply only the home country's rules everywhere","Understand and comply with each location's laws and norms","Disregard the various local customs to keep everything uniform","Let each local team do whatever it prefers"],
-    answer: 1, explain: "Operating across jurisdictions requires understanding and complying with each location's legal and cultural environment — a core business-environment responsibility, not imposing one set of rules or having no standards." }
+    answer: 1, explain: "Operating across jurisdictions requires understanding and complying with each location's legal and cultural environment — a core business-environment responsibility, not imposing one set of rules or having no standards." },
+
+  /* ============================================================
+     EXPANDED BANK — additional scenario questions
+     ============================================================ */
+
+  /* ---------- PEOPLE ---------- */
+
+  { domain: "People", q: "A vendor's technical lead and your in-house architect are deadlocked over the integration approach, and the disagreement has stalled work for several days. What should the project manager do FIRST?",
+    options: ["Choose the approach you think is best and direct both to follow it","Bring them together to surface the underlying concerns and reach a shared solution","Escalate to both organizations' sponsors to impose a decision","Let the in-house architect prevail since it is your project"],
+    answer: 1, explain: "Collaborate/problem-solve gets to the root issue and produces a durable, win-win decision both parties own. Forcing your choice, escalating, or siding by default skips the technical merits and damages the relationship." },
+
+  { domain: "People", q: "You take over a team that has low trust after a previous manager micromanaged them. What is the BEST way to begin building trust?",
+    options: ["Announce ambitious new targets to refocus everyone quickly","Hold one-on-ones, listen, and follow through on small commitments","Reorganize roles so people start fresh under you","Promise rewards for hitting the next milestone"],
+    answer: 1, explain: "Trust is rebuilt through listening, consistency, and kept commitments. New targets, reorganizations, or reward promises do not address the broken trust and can feel like more top-down control." },
+
+  { domain: "People", q: "A powerful stakeholder keeps bypassing you and handing new work directly to your developers mid-iteration. What should the project manager do?",
+    options: ["Tell the developers to ignore any request that does not come from you","Speak with the stakeholder to understand the needs and route them through the agreed process","Quietly absorb the extra work to keep the stakeholder happy","Escalate the stakeholder's behavior to their executive immediately"],
+    answer: 1, explain: "Address it directly and collaboratively, then channel requests through the backlog/change process so the team is protected and the work is prioritized transparently. Ignoring, silently absorbing, or jumping to escalation are extremes that hurt the relationship or the team." },
+
+  { domain: "People", q: "Your team is distributed across four time zones and decisions made on calls keep surprising those who could not attend. What is the BEST action?",
+    options: ["Record every call and expect absentees to watch them later","Establish team agreements on meeting times, decision logging, and async communication","Schedule all meetings in your own working hours for consistency","Make key decisions yourself so fewer meetings are needed"],
+    answer: 1, explain: "Team agreements (working hours, how decisions are recorded and shared, async norms) make a distributed team work. Recordings alone, your-timezone-only meetings, or centralizing decisions ignore inclusion and self-organization." },
+
+  { domain: "People", q: "A strong performer has quietly taken on far more than their share and is showing early signs of burnout. What should the project manager do FIRST?",
+    options: ["Praise them publicly so they feel their effort is valued","Talk with them and rebalance the workload across the team","Wait to see whether their output actually declines","Reduce their responsibilities without discussing it first"],
+    answer: 1, explain: "A caring, direct conversation plus rebalancing protects the person and the team's sustainable pace. Public praise rewards the overload, waiting risks burnout, and silently stripping work can feel punitive and confusing." },
+
+  { domain: "People", q: "In meetings, one assertive member dominates while quieter members disengage and stop contributing ideas. What should the project manager do?",
+    options: ["Speak privately with the dominant member and tell them to talk less","Facilitate with ground rules and techniques that draw everyone in","Collect input only by email to avoid the meeting dynamic","Let the strongest voices drive since they are clearly engaged"],
+    answer: 1, explain: "A facilitator creates psychological safety and uses round-robins/ground rules so all voices are heard. Simply silencing one person, abandoning meetings, or letting the loudest win wastes the team's collective insight." },
+
+  { domain: "People", q: "A functional manager pulls one of your key team members onto unrelated operational work without telling you, and a deliverable is now at risk. What should you do FIRST?",
+    options: ["Escalate to the sponsor that the manager is sabotaging the project","Negotiate directly with the functional manager on priorities and availability","Reassign the at-risk deliverable to a less-skilled member","Work the extra hours yourself to cover the gap"],
+    answer: 1, explain: "In a matrix, the PM negotiates resource priorities with the functional manager first, using influence and the project's needs. Escalation, degrading the deliverable, or martyrdom are premature or unsustainable." },
+
+  { domain: "People", q: "Senior management hands your team a deadline-driven estimate the team believes is unrealistic. What is the BEST approach?",
+    options: ["Accept the estimate and push the team to simply work faster","Have the people doing the work estimate it and present the data to management","Pad the estimate heavily so you are sure to finish early","Commit to the date and quietly cut testing to fit"],
+    answer: 1, explain: "Those doing the work produce the most accurate estimates and the strongest commitment; you then negotiate with management using that evidence. Blind acceptance, heavy padding, or secretly cutting quality all damage credibility or the product." },
+
+  { domain: "People", q: "A team member who transferred from another culture is reluctant to deliver bad news in front of the group, though they share it one-on-one. What should the PM do?",
+    options: ["Insist they raise all issues openly in team meetings","Adapt the communication approach and create safe channels for surfacing issues","Treat the reluctance as a performance problem to document","Stop asking them for status in group settings entirely"],
+    answer: 1, explain: "Lead with cultural awareness and emotional intelligence: provide channels (private check-ins, anonymous boards) that fit their style while keeping information flowing. Forcing public disclosure, punishing, or excluding them are counterproductive." },
+
+  { domain: "People", q: "Emotions are running very high during a heated disagreement and the discussion has become unproductive. What is the MOST appropriate immediate step?",
+    options: ["Force a decision now so the team can move on","Pause the discussion briefly, let people cool down, then problem-solve","Have each side put their position in writing for the record","Ask the loudest party to concede for the good of the team"],
+    answer: 1, explain: "Withdraw/avoid is appropriate only as a brief cooling-off when emotions block progress; you then return to collaborate. Forcing, paper trails, or pressuring a concession do not resolve the underlying issue constructively." },
+
+  { domain: "People", q: "A capable junior developer is new to the technology and unsure how to proceed on their tasks. Which leadership approach fits BEST right now?",
+    options: ["Delegating — hand over the work and step back","Directing/coaching — give clear guidance and build their skills","Supporting — encourage them but leave decisions to them","Laissez-faire — let them figure it out independently"],
+    answer: 1, explain: "Situational leadership matches style to readiness: low competence/high willingness calls for a directing-then-coaching style. Delegating, pure supporting, or hands-off would leave an unready person without the guidance they need." },
+
+  { domain: "People", q: "A giving-a-raise discussion reveals a top engineer is dissatisfied because the work itself has become routine and unchallenging. What addresses the real issue?",
+    options: ["A larger salary increase to retain them","More challenging, meaningful work and growth opportunities","A more comfortable office and better equipment","A title change with the same responsibilities"],
+    answer: 1, explain: "Pay and conditions are Herzberg hygiene factors that prevent dissatisfaction but do not motivate; challenge, growth, and recognition are the true motivators. Money, perks, or an empty title won't fix the lack of meaningful work." },
+
+  { domain: "People", q: "Coaching has not improved a team member's repeated missed commitments, and the pattern is now affecting others. What is the appropriate NEXT step?",
+    options: ["Continue coaching indefinitely and hope it improves","Document the performance gap and involve their functional manager","Quietly remove their important tasks to limit the damage","Raise the issue by name in the next retrospective"],
+    answer: 1, explain: "After good-faith coaching fails, the issue progresses to documentation and the functional manager — fair and escalating. Endless coaching ignores the team impact, silently stripping work is opaque, and naming someone publicly is humiliating." },
+
+  { domain: "People", q: "A stakeholder is currently resistant, but the project needs them to be actively supportive. Where and how do you plan to close that gap?",
+    options: ["Note it in the issue log and assign a due date","Record current vs. desired levels in the engagement assessment matrix and plan targeted actions","Add the stakeholder to the risk register as a threat","Reduce their involvement until the project is further along"],
+    answer: 1, explain: "The stakeholder engagement assessment matrix captures Current vs. Desired engagement so you can plan specific actions to move them. The issue log, risk register, or disengagement do not drive a deliberate engagement strategy." },
+
+  { domain: "People", q: "During an agile transition, an experienced team lead openly resists the new way of working and undermines it in front of the team. What should the PM/coach do FIRST?",
+    options: ["Remove the lead from the team to protect the change","Meet privately to understand their concerns and involve them in shaping the change","Overrule them publicly to show the change is final","Wait for the team to pressure the lead into compliance"],
+    answer: 1, explain: "Resistance is best met by understanding root concerns and giving the influential person a stake in the change. Removing them, public confrontation, or relying on peer pressure escalate conflict and waste their experience." },
+
+  { domain: "People", q: "Your project operates in a weak matrix where you have little formal authority, yet you need strong cooperation from specialists. What is your BEST source of influence?",
+    options: ["Reward and coercive power tied to their pay","Expert and referent power earned through competence and relationships","Formal authority granted in the charter","Escalation to their managers whenever you need action"],
+    answer: 1, explain: "With little positional authority, expert and referent power (credibility, trust, relationships) are what move people. You don't control pay, formal authority is limited here, and constant escalation erodes goodwill." },
+
+  { domain: "People", q: "A self-organizing team is functioning well, but one senior member keeps assigning specific tasks to others. What should the Scrum Master do?",
+    options: ["Endorse it since someone is keeping the work moving","Coach the team and the member toward self-selection of work","Take over task assignment yourself to standardize it","Split the assertive member into a separate sub-team"],
+    answer: 1, explain: "Self-organizing teams pull their own work; the servant leader coaches away from one person assigning tasks. Endorsing it, taking over assignment yourself, or splitting the team all undermine self-organization." },
+
+  { domain: "People", q: "A team member confides that they were asked by another department to alter test results to make a deliverable look ready. What should the PM do?",
+    options: ["Tell the member to stay out of other departments' business","Take the ethics concern seriously and address it through the proper channels","Quietly fix the results so the deliverable can proceed","Wait until you have absolute proof before acting"],
+    answer: 1, explain: "Integrity is non-negotiable: a credible report of falsifying results must be addressed honestly through appropriate channels. Dismissing it, participating in the cover-up, or indefinite inaction all violate the Code of Ethics." },
+
+  { domain: "People", q: "Two members reach an agreement in which each gives up part of what they wanted just to end the dispute quickly. Which conflict technique is this?",
+    options: ["Collaborate / problem-solve","Compromise / reconcile","Force / direct","Withdraw / avoid"],
+    answer: 1, explain: "Each side conceding something to settle is the textbook definition of compromise (lose-lose). Collaboration seeks win-win, forcing imposes one view, and withdrawal retreats from the issue." },
+
+  { domain: "People", q: "A newly formed team is enthusiastic but unclear on how they will work together, make decisions, and handle conflict. What should the PM facilitate FIRST?",
+    options: ["A detailed project schedule with individual task assignments","A team charter defining values, ground rules, and decision-making","A competition to identify the strongest performers","A list of penalties for missing commitments"],
+    answer: 1, explain: "A team-created charter establishes ground rules, norms, and decision-making that carry the team through later storming. A schedule, internal competition, or penalties do nothing to build the working agreements a new team needs." },
+
+  { domain: "People", q: "A remote team member tells you privately they feel out of the loop and uncertain whether their work still matters. What is the BEST response?",
+    options: ["Reassure them once and assume the feeling will pass","Increase interactive contact and connect their work to the goal","Reassign them to solo tasks needing less coordination","Suggest they reach out to teammates more on their own"],
+    answer: 1, explain: "Disconnection on virtual teams is countered with deliberate interactive communication and showing how their work contributes. One-off reassurance, isolating them further, or putting the burden on them ignores the PM's role in inclusion." },
+
+  { domain: "People", q: "The team cannot reach consensus on a design option after lengthy debate, and a decision is needed today. What should the PM do?",
+    options: ["Make the decision unilaterally to save time","Facilitate a structured decision technique such as multivoting or fist-of-five","Postpone the decision until everyone fully agrees","Let the most senior engineer decide for the group"],
+    answer: 1, explain: "When debate stalls, the facilitator uses a structured group-decision technique to converge while keeping ownership with the team. Deciding for them, waiting for unanimity, or deferring to seniority abandons facilitation." },
+
+  { domain: "People", q: "After a major milestone, the team pulled long hours to deliver. What is the MOST appropriate thing for the PM to do?",
+    options: ["Immediately set a stretch goal for the next milestone","Recognize the team's effort genuinely and promptly","Give a cash bonus to the single top contributor","Move on quietly so momentum is not lost"],
+    answer: 1, explain: "Timely, genuine recognition reinforces desired behavior and sustains motivation. Piling on a new stretch goal, singling out one person divisively, or ignoring the effort undermine morale." },
+
+  { domain: "People", q: "A team member becomes defensive when you start giving feedback and stops listening. What active-listening behavior helps MOST?",
+    options: ["Repeat your point more firmly until it lands","Paraphrase their perspective and confirm you understand before continuing","Pause the conversation and send your feedback in writing","Bring in a third person to back up your view"],
+    answer: 1, explain: "Reflecting and confirming the other person's view defuses defensiveness and shows respect, opening them to the feedback. Repeating forcefully, retreating to email, or piling on support feels like an attack." },
+
+  { domain: "People", q: "You need a skeptical regulator's cooperation, but they have low interest in day-to-day project details and high power over approvals. How should you engage them?",
+    options: ["Manage them closely with frequent detailed updates","Keep them satisfied with high-level, relevant information","Simply monitor them with minimal effort","Keep them informed with the same cadence as the team"],
+    answer: 1, explain: "High power / low interest stakeholders should be kept satisfied — give them the high-level information they care about without overwhelming them. Close management over-communicates, monitoring under-serves their power, and team-level updates miss the mark." },
+
+  { domain: "People", q: "Mid-project a new member joins a high-performing team and is unsure of norms and how the team works. What should the PM do to integrate them effectively?",
+    options: ["Expect them to observe and adapt on their own","Pair them with a mentor and review the team's charter and norms","Give them only isolated tasks until they prove themselves","Restart team-building from scratch for the whole team"],
+    answer: 1, explain: "Mentoring plus a walkthrough of norms/charter integrates a newcomer quickly while preserving team performance. Sink-or-swim, isolation, or resetting the whole team are inefficient or unnecessary." },
+
+  { domain: "People", q: "A conflict has arisen because two members each believed the other owned a shared task, and it slipped. Beyond fixing it now, what BEST prevents recurrence?",
+    options: ["A team agreement to communicate more often","Clarifying ownership with a RACI so each activity has one accountable person","A stricter status-reporting requirement","Adding schedule buffer to absorb future slips"],
+    answer: 1, explain: "Ambiguous ownership is solved structurally by a RACI that names a single Accountable per activity. More communication, stricter reporting, or buffers treat symptoms, not the ownership gap." },
+
+  { domain: "People", q: "During a difficult conversation, a team member raises their voice and you feel yourself getting angry. Which emotional-intelligence skill is MOST important in the moment?",
+    options: ["Social awareness — reading the other person's emotions","Self-management — regulating your own reaction","Relationship management — influencing the outcome","Self-awareness — naming what you feel afterward"],
+    answer: 1, explain: "In the heat of the moment, self-management (regulating your own response) keeps the conversation constructive. The other competencies matter, but controlling your own reaction is the immediate need." },
+
+  { domain: "People", q: "Your team keeps experiencing friction over who gets scarce test environments and when. What is the most likely root cause to address?",
+    options: ["Personality clashes between specific individuals","Competition over limited resources, schedules, and priorities","A lack of formal authority on your part","Insufficient documentation of procedures"],
+    answer: 1, explain: "Most project conflict stems from competition over resources, schedules, and priorities — not personalities. Addressing the resource/priority contention (e.g., scheduling, more environments) resolves the real driver." },
+
+  { domain: "People", q: "A motivated team is being held back because approvals from outside the team take days. What is the servant-leader's primary job here?",
+    options: ["Push the team to work around the approvals informally","Remove the impediment by streamlining or expediting the external approvals","Reduce the team's commitments to match the slow approvals","Document the delays and report them upward only"],
+    answer: 1, explain: "Removing impediments that block the team is the core servant-leader duty — engage the approvers to speed or streamline the process. Working around controls, shrinking commitments, or merely reporting leaves the team blocked." },
+
+  /* ---------- PROCESS ---------- */
+
+  { domain: "Process", q: "A project has BAC = $800,000 and is 40% complete; actual cost to date is $400,000. What is the cost performance index (CPI)?",
+    options: ["0.50","0.80","1.25","1.60"],
+    answer: 1, explain: "EV = 40% × $800,000 = $320,000. CPI = EV/AC = 320,000/400,000 = 0.80, meaning you're getting 80 cents of value per dollar spent — over budget." },
+
+  { domain: "Process", q: "On a project with BAC = $500,000, the CPI has stabilized at 0.80 and is expected to continue. What is the estimate at completion (EAC)?",
+    options: ["$400,000","$625,000","$500,000","$800,000"],
+    answer: 1, explain: "When current cost performance is expected to continue, EAC = BAC/CPI = 500,000/0.80 = $625,000. The project is forecast to finish well over its $500,000 budget." },
+
+  { domain: "Process", q: "An activity has Optimistic = 6 days, Most Likely = 12 days, Pessimistic = 30 days. What is the PERT (beta) expected duration?",
+    options: ["12 days","14 days","16 days","18 days"],
+    answer: 1, explain: "PERT = (O + 4M + P)/6 = (6 + 48 + 30)/6 = 84/6 = 14 days. The Most Likely value is weighted four times, pulling the estimate toward 12 but raising it for the long tail." },
+
+  { domain: "Process", q: "Midway through execution, a stakeholder asks for a 'tiny' scope addition, insisting it is too small to bother with paperwork. What should the PM do?",
+    options: ["Add it immediately since it is small and low-cost","Assess the impact and run it through integrated change control","Decline any change once execution has begun","Add it but skip updating the baselines to save time"],
+    answer: 1, explain: "Every change — regardless of size — is assessed for impact and routed through integrated change control before being approved and baselined. Squeezing it in, refusing all change, or skipping baseline updates all violate disciplined change management." },
+
+  { domain: "Process", q: "Which sequence correctly reflects how a deliverable moves toward customer sign-off?",
+    options: ["Validate Scope, then Control Quality","Control Quality (verify correctness), then Validate Scope (customer accepts)","Validate Scope and Control Quality happen simultaneously","Control Scope, then Validate Scope, then Control Quality"],
+    answer: 1, explain: "Control Quality checks the deliverable internally for correctness first; then Validate Scope obtains the customer's formal acceptance. Accepting before verifying, or reversing the order, risks signing off on defective work." },
+
+  { domain: "Process", q: "A new risk is identified during execution that was not in the risk register. What should the project manager do FIRST?",
+    options: ["Implement a response right away to be safe","Record it in the risk register and analyze it","Escalate it to the sponsor as a major threat","Wait to see whether it actually materializes"],
+    answer: 1, explain: "Risk management is iterative: a newly identified risk is logged in the register and analyzed (probability/impact) before a proportional response is planned. Acting blindly, escalating prematurely, or ignoring it skips analysis." },
+
+  { domain: "Process", q: "The scope of work is highly uncertain and likely to evolve as the project proceeds. Which contract type best protects the buyer's interests?",
+    options: ["Firm fixed price (FFP)","Cost-reimbursable (e.g., CPFF/CPIF)","Fixed price incentive fee (FPIF)","Lump-sum turnkey"],
+    answer: 1, explain: "When scope is uncertain, a cost-reimbursable contract is appropriate because forcing a fixed price on undefined work invites huge risk premiums or disputes. Fixed-price forms assume well-defined scope." },
+
+  { domain: "Process", q: "Under a firm-fixed-price contract, the seller's costs run well over their bid. Who absorbs the overrun?",
+    options: ["The buyer, who must reimburse actual costs","The seller, who is bound to the fixed price","The cost is shared per the contract ratio","A change order automatically covers the difference"],
+    answer: 1, explain: "In firm-fixed-price contracts the seller bears cost-overrun risk — that is the point of the fixed price. The buyer is not obligated to reimburse overruns absent an approved change to scope." },
+
+  { domain: "Process", q: "A control chart shows seven consecutive points falling below the mean, though all are within the control limits. What does this indicate?",
+    options: ["The process is fine because nothing exceeds the limits","The process is out of control and should be investigated","The control limits should be widened","A single point should be removed as an outlier"],
+    answer: 1, explain: "The rule of seven: seven consecutive points on one side of the mean signals a non-random pattern — the process is out of control even within limits, and the cause should be investigated. Ignoring it or adjusting limits hides the signal." },
+
+  { domain: "Process", q: "You set aside funds to cover specific identified risks that you expect to manage within the project. What is this called and who controls it?",
+    options: ["Management reserve, controlled by senior management","Contingency reserve, inside the cost baseline, controlled by the PM","Management reserve, inside the cost baseline","Contingency reserve, outside the baseline, controlled by the sponsor"],
+    answer: 1, explain: "Contingency reserve covers known (identified) risks, sits inside the cost baseline, and is managed by the PM. Management reserve is for unknown risks, sits outside the baseline, and needs management approval." },
+
+  { domain: "Process", q: "You must shorten the project schedule but the budget is fixed and cannot absorb extra cost. Which compression technique is appropriate?",
+    options: ["Crashing by adding more resources","Fast-tracking by overlapping activities in parallel","Reducing the scope baseline without approval","Extending the working calendar indefinitely"],
+    answer: 1, explain: "Fast-tracking overlaps activities that were planned sequentially and adds no direct cost (though it adds risk/rework). Crashing adds cost, cutting scope needs change control, and open-ended overtime is unsustainable." },
+
+  { domain: "Process", q: "A decision has two options: Option A has a 60% chance of $100,000 profit and a 40% chance of a $20,000 loss; Option B yields a certain $40,000. Using EMV, which is the better choice?",
+    options: ["Option A, because its expected monetary value is higher","Option B, because a guaranteed amount always beats a risky one","They are equivalent in expected value","There is not enough information to decide"],
+    answer: 0, explain: "EMV of A = 0.60×$100,000 + 0.40×(−$20,000) = $60,000 − $8,000 = $52,000, which exceeds Option B's certain $40,000. You choose the higher expected monetary value, so Option A is the better decision under uncertainty." },
+
+  { domain: "Process", q: "At project closeout, the customer has used the product but has not yet formally signed off. What must the PM ensure before closing?",
+    options: ["That all invoices are paid in full","That formal acceptance is obtained and records are archived","That the team has already been reassigned","That the warranty period has fully elapsed"],
+    answer: 1, explain: "Closing requires formal acceptance of deliverables, archiving records, finalizing lessons learned, and releasing resources. Use/payment alone is not sign-off, and resources are released as part of — not before — proper closure." },
+
+  { domain: "Process", q: "Stakeholders want a probability distribution of possible project completion dates given uncertain activity durations. Which technique provides this?",
+    options: ["Qualitative risk analysis with a probability-impact matrix","Monte Carlo simulation (quantitative analysis)","A RACI assignment matrix","Pareto analysis of past defects"],
+    answer: 1, explain: "Monte Carlo simulation runs many iterations across input ranges to produce a probability distribution of cost/schedule outcomes — a quantitative technique. Qualitative analysis ranks risks but gives no distribution; RACI and Pareto serve other purposes." },
+
+  { domain: "Process", q: "Two activities can run at the same time, but the team chose to sequence them based on a preferred best practice rather than a physical requirement. What kind of dependency is this?",
+    options: ["Mandatory (hard logic)","Discretionary (soft logic)","External dependency","Internal mandatory dependency"],
+    answer: 1, explain: "A dependency based on preference or best practice — not a physical or contractual must — is discretionary (soft logic) and can be changed if needed. Mandatory dependencies are physically or contractually required." },
+
+  { domain: "Process", q: "A seller and buyer disagree over whether certain work is within the contracted scope. What is the PREFERRED first approach to resolve the dispute?",
+    options: ["Immediately pursue litigation to enforce the contract","Negotiate a settlement directly between the parties","Terminate the contract for convenience","Stop all payments until the seller concedes"],
+    answer: 1, explain: "Contract disputes are best resolved first through direct negotiation; alternative dispute resolution and litigation are later resorts. Termination or withholding payment escalates the conflict and invites legal exposure." },
+
+  { domain: "Process", q: "During execution, work performance data is collected from completed activities. What happens to it next in the monitoring and controlling process?",
+    options: ["It is sent directly to stakeholders as a report","It is analyzed into work performance information","It is archived immediately as a lesson learned","It becomes the new scope baseline"],
+    answer: 1, explain: "Raw work performance data is analyzed in monitoring & controlling into work performance information (e.g., status against baselines), which is then packaged into work performance reports for stakeholders." },
+
+  { domain: "Process", q: "An activity has a total float of 4 days and is not on the critical path. The customer asks what happens if it slips 2 days. What is the correct response?",
+    options: ["The project end date slips by 2 days","The project end date is unaffected because the slip is within float","The activity becomes critical and float turns negative","All successor activities must be crashed"],
+    answer: 1, explain: "Total float is how long an activity can slip without delaying the project finish. With 4 days of float, a 2-day slip is absorbed and the end date is unaffected; the activity is not yet critical." },
+
+  { domain: "Process", q: "The team wants to decompose the scope to the level where work can be reliably estimated and assigned. What is that lowest level of the WBS called?",
+    options: ["A control account","A work package","A planning package","A milestone"],
+    answer: 1, explain: "The work package is the lowest level of the WBS, where cost and duration are estimated and work is assigned. A control account is a higher management point; a milestone has zero duration." },
+
+  { domain: "Process", q: "Halfway through a predictive project, the PM realizes lessons learned have not been recorded yet. When should lessons learned be captured?",
+    options: ["Only at the very end during closing","Continuously throughout the project, finalized at closure","Only when a major failure occurs","At the kickoff meeting and never again"],
+    answer: 1, explain: "Lessons learned are captured continuously throughout the project in the lessons learned register and rolled into the repository at closure. Waiting for the end — or only logging failures — loses valuable, time-sensitive learning." },
+
+  { domain: "Process", q: "A quality audit finds the team is following an inefficient process that still produces acceptable output. This audit and process focus is part of which process?",
+    options: ["Control Quality (inspecting outputs)","Manage Quality (auditing and improving the process)","Validate Scope (customer acceptance)","Plan Quality Management (setting standards)"],
+    answer: 1, explain: "Manage Quality (quality assurance) audits and improves the process — doing the work right. Control Quality inspects the deliverables themselves; Validate Scope is customer acceptance; Plan Quality sets the standards." },
+
+  { domain: "Process", q: "Stakeholders are identified late, and one overlooked group now objects to a key design decision. What does this reveal about stakeholder identification?",
+    options: ["It should be done once at initiation and then frozen","It is iterative and continuous throughout the project","It is only the sponsor's responsibility","It can be deferred until execution is underway"],
+    answer: 1, explain: "Identifying stakeholders is an ongoing, iterative activity — new stakeholders emerge and engagement needs change throughout. Treating it as one-and-done at initiation is exactly how influential groups get missed." },
+
+  { domain: "Process", q: "A risk response (taking out insurance) is chosen for a high-impact threat. Which response strategy does buying insurance represent?",
+    options: ["Mitigate","Transfer","Avoid","Accept"],
+    answer: 1, explain: "Insurance shifts the financial impact of a threat to a third party — the definition of transfer. Mitigate reduces probability/impact, avoid eliminates the cause, and accept takes no proactive action." },
+
+  { domain: "Process", q: "The procurement statement of work for a complex service is vague, and bidders keep asking divergent questions. What is the BEST way to give all sellers the same information fairly?",
+    options: ["Answer each bidder privately as questions arrive","Hold a bidder (pre-bid) conference so all sellers get identical information","Pick the seller who asked the fewest questions","Extend the deadline and hope the questions stop"],
+    answer: 1, explain: "A bidder conference gives every prospective seller the same clarifications at once, keeping the procurement fair and transparent. Private answers create information asymmetry; the other options don't address the unequal information." },
+
+  /* ---------- AGILE / HYBRID ---------- */
+
+  { domain: "Agile/Hybrid", q: "Midway through a sprint, a stakeholder demands a new high-priority feature be added to the current sprint. What should the Scrum Master do?",
+    options: ["Add it to the current sprint to satisfy the stakeholder","Direct the request to the Product Owner to prioritize on the product backlog","Quietly swap it in for a lower-priority story already in the sprint","Tell the stakeholder agile does not allow any changes"],
+    answer: 1, explain: "New requests go to the Product Owner for backlog prioritization; the sprint commitment is protected. Forcing it in disrupts the sprint, secret swaps bypass the PO, and 'agile allows no change' misrepresents agile (change is welcomed — into the backlog)." },
+
+  { domain: "Agile/Hybrid", q: "The daily standup routinely runs 30+ minutes because the team dives into detailed technical problem-solving. What should the Scrum Master do?",
+    options: ["Let it continue since the team is collaborating","Timebox the standup and move detailed discussions to a follow-up","Cancel the standup and rely on written status","Have members report individually to the Scrum Master instead"],
+    answer: 1, explain: "The standup is a short (≈15-minute) sync; deep problem-solving is taken offline with only those involved (a 'sixteenth-minute' discussion). Letting it sprawl wastes the team, while cancelling it or turning it into status reports defeats its purpose." },
+
+  { domain: "Agile/Hybrid", q: "The Product Owner is frequently unavailable, so the team cannot get timely answers to clarify backlog items. How should the Scrum Master treat this?",
+    options: ["Have the team make assumptions and proceed","Treat PO availability as an impediment and work to resolve it","Let a senior developer act as a substitute Product Owner","Pause development until the PO returns each time"],
+    answer: 1, explain: "Lack of PO access blocks the team, so it is an impediment the servant-leader Scrum Master removes (e.g., negotiating dedicated PO time). Guessing risks building the wrong thing, a stand-in dilutes accountability, and pausing repeatedly destroys flow." },
+
+  { domain: "Agile/Hybrid", q: "Team velocity has dropped for two consecutive sprints. What is the BEST first action?",
+    options: ["Pressure the team to commit to more story points","Use the retrospective to inspect the cause and adapt","Replace the lowest-contributing team member","Increase the sprint length to fit more work"],
+    answer: 1, explain: "Velocity is a diagnostic, not a target; the team inspects the cause in the retrospective and adapts. Pressuring for more points, blaming an individual, or lengthening sprints treat the symptom and can make things worse." },
+
+  { domain: "Agile/Hybrid", q: "A sponsor insists on a fixed scope, fixed date, and a detailed up-front plan, but requirements are highly uncertain and changing. What approach should the PM recommend?",
+    options: ["A fully predictive plan to give the sponsor certainty","An agile or hybrid approach that delivers incrementally and adapts","Delaying the project until requirements are fully known","Committing to the fixed plan and managing change requests later"],
+    answer: 1, explain: "High uncertainty and frequent change favor an adaptive (agile/hybrid) approach delivering value incrementally while responding to change. Forcing a fixed predictive plan onto unstable requirements guarantees rework; indefinite delay forfeits value." },
+
+  { domain: "Agile/Hybrid", q: "A team repeatedly fails to complete everything it commits to each sprint. What is the BEST way to improve predictability?",
+    options: ["Extend each sprint until all committed work fits","Commit to less based on actual velocity and limit work in progress","Add overtime so the team finishes the commitment","Stop estimating and just work until the sprint ends"],
+    answer: 1, explain: "Right-sizing the commitment to real velocity and limiting WIP improves flow and predictability. Longer sprints, overtime, or abandoning estimation mask the over-commitment rather than fixing it." },
+
+  { domain: "Agile/Hybrid", q: "At sprint end, several stories are functionally working but do not meet the Definition of Done (e.g., not fully tested). How should they be treated?",
+    options: ["Count them as done since they basically work","Treat them as not done and return them to the backlog","Mark them done and finish testing next sprint","Lower the Definition of Done so they qualify"],
+    answer: 1, explain: "Work that doesn't meet the Definition of Done is not done — it returns to the backlog for a future sprint. Counting it anyway, deferring DoD work, or weakening the DoD erodes quality and transparency." },
+
+  { domain: "Agile/Hybrid", q: "Stakeholders want to see and give feedback on the working product produced this sprint. Which event is designed for this?",
+    options: ["Sprint Retrospective","Sprint Review","Daily Scrum","Sprint Planning"],
+    answer: 1, explain: "The Sprint Review demos the increment to stakeholders to inspect the product and gather feedback that informs the backlog. The retrospective improves the process (team-only); the other events plan or sync work." },
+
+  { domain: "Agile/Hybrid", q: "Several teams working on one product keep blocking each other on shared dependencies. What practice helps coordinate across teams?",
+    options: ["A longer daily scrum that includes everyone","A scrum of scrums where representatives sync on dependencies","Merging all teams into a single large team","Having each team work in isolation to avoid conflicts"],
+    answer: 1, explain: "A scrum of scrums lets team representatives surface and resolve cross-team dependencies and impediments. A giant standup is unwieldy, merging teams is impractical, and isolation makes the dependency problem worse." },
+
+  { domain: "Agile/Hybrid", q: "A project will run an early predictive design/regulatory phase, then build the solution in iterations. How is this BEST described?",
+    options: ["A failure to choose a single methodology","A deliberate hybrid approach tailored to the work","An agile project with extra documentation","A predictive project that is behind schedule"],
+    answer: 1, explain: "Combining a predictive phase with iterative delivery is a deliberate hybrid tailoring decision matched to the nature of the work. It is intentional, not indecision, excess documentation, or a slipping waterfall project." },
+
+  { domain: "Agile/Hybrid", q: "A Kanban team's work-in-progress limit for the 'Testing' column is exceeded, and items are piling up there. What should the team do?",
+    options: ["Raise the WIP limit so more work can flow in","Stop starting new work and swarm to clear the testing bottleneck","Skip testing temporarily to keep items moving","Add more items to development to stay busy"],
+    answer: 1, explain: "When a column exceeds its WIP limit, the team stops starting and focuses on finishing — swarming the bottleneck restores flow. Raising the limit hides the problem, skipping testing harms quality, and pushing more work in worsens the pileup." },
+
+  { domain: "Agile/Hybrid", q: "Early in development, the team faces a risky technical unknown that could derail the design. What agile tool helps reduce this uncertainty before committing?",
+    options: ["A longer sprint to allow more buildout","A time-boxed spike to research and experiment","Adding the work to the next release with no analysis","A detailed up-front design document for the whole system"],
+    answer: 1, explain: "A spike is a time-boxed research/experiment task that reduces uncertainty before the team commits to risky work. Longer sprints, blind commitment, or heavy up-front design don't target the unknown efficiently." },
+
+  { domain: "Agile/Hybrid", q: "A Product Owner keeps stuffing the backlog with pet features that add little value while high-value items wait. What is the core agile principle being violated?",
+    options: ["Sustainable pace","Delivering the highest-value work first","Limiting work in progress","Maintaining a consistent sprint length"],
+    answer: 1, explain: "Agile prioritizes delivering the highest value first; ordering the backlog by value is the PO's central responsibility. The other principles are real but not the one being broken by value-poor prioritization." },
+
+  { domain: "Agile/Hybrid", q: "The team wants relative estimates that improve consistency over time and reduce anchoring during estimation. What should they use?",
+    options: ["Hours estimated by the most senior developer","Story points estimated collaboratively via planning poker","Management's target dates converted to effort","A single bottom-up estimate per task"],
+    answer: 1, explain: "Story points (relative sizing) estimated together with planning poker leverage team knowledge and reduce anchoring. Senior-only hour estimates, management targets, and lone estimates miss the collaborative, relative intent." },
+
+  { domain: "Agile/Hybrid", q: "Retrospective action items keep getting identified but never implemented, so the same problems recur. What should the Scrum Master do?",
+    options: ["Stop holding retrospectives since they aren't working","Ensure a few improvement items are committed and tracked to completion","Have management assign the improvements instead","Lengthen the retrospective to generate more ideas"],
+    answer: 1, explain: "Retrospectives drive improvement only when a small number of actions are owned and followed through. Cancelling them, outsourcing ownership to management, or generating more unactioned ideas misses the point of inspect-and-adapt." },
+
+  { domain: "Agile/Hybrid", q: "Technical debt is quietly accumulating and starting to slow delivery. How should an agile team handle it?",
+    options: ["Hide it until a big refactor can be scheduled","Make it visible on the backlog and address it continuously","Ignore it as long as features still ship","Wait for management to authorize cleanup"],
+    answer: 1, explain: "Technical debt should be made visible (backlog items) and paid down continuously so it doesn't silently erode delivery. Hiding it, ignoring it, or waiting for permission lets it compound." },
+
+  { domain: "Agile/Hybrid", q: "A startup wants to validate whether customers want a feature before investing heavily. What should the team deliver FIRST?",
+    options: ["A fully featured, polished product","A minimum viable product that delivers value and enables learning","A detailed market-research report only","The complete backlog implemented in one release"],
+    answer: 1, explain: "An MVP is the smallest releasable version that delivers value and produces validated learning from real users. Building everything first, or only researching, delays or avoids the real-world feedback the team needs." },
+
+  { domain: "Agile/Hybrid", q: "A team new to agile insists on writing complete, detailed requirements for the entire product before any coding. How should the coach guide them?",
+    options: ["Support the full up-front specification to reduce risk","Introduce progressive elaboration — detail items just before they're built","Skip requirements entirely and start coding","Have the Product Owner write all requirements alone"],
+    answer: 1, explain: "Agile elaborates requirements progressively (just-in-time, just enough), refining backlog items as they near development. Full up-front specs waste effort on items that will change; skipping requirements or PO-only authoring are opposite extremes." },
+
+  { domain: "Agile/Hybrid", q: "Halfway through a release, the burndown shows the team will not finish all planned scope by the release date. What is the BEST response?",
+    options: ["Hide the trend until closer to the deadline","Be transparent and work with the Product Owner to reprioritize scope","Mandate overtime to deliver the full original scope","Cut the Definition of Done to deliver everything"],
+    answer: 1, explain: "Agile fixes time/cost and flexes scope: surface the data transparently and have the PO reprioritize so the highest-value items ship. Hiding the trend, forcing overtime, or cutting quality all violate agile values." },
+
+  { domain: "Agile/Hybrid", q: "A manager wants to use velocity to compare two different teams and rank their performance. Why is this inappropriate?",
+    options: ["Velocity is confidential to each Scrum Master","Story points are relative to each team, so velocities aren't comparable","Velocity only matters in predictive projects","Teams should be compared on hours, not points"],
+    answer: 1, explain: "Story points are calibrated within a single team, so one team's velocity is meaningless against another's — velocity forecasts a team's own future, it doesn't rank teams. Comparing them (or switching to hours) misuses the metric." },
+
+  { domain: "Agile/Hybrid", q: "During the Daily Scrum, a manager attends and starts asking each person for a detailed status update. What is the problem?",
+    options: ["Nothing — the manager needs the information","The Daily Scrum is a team sync for self-organization, not a status report to a manager","The standup should be replaced with a written report","The manager should run the standup going forward"],
+    answer: 1, explain: "The Daily Scrum is by and for the development team to coordinate toward the sprint goal — not a status report to a manager. Turning it into a manager's status meeting undermines self-organization." },
+
+  { domain: "Agile/Hybrid", q: "An organization wants the benefits of agile but has a regulatory milestone that requires a formal documented review at a fixed date. What is the BEST approach?",
+    options: ["Abandon agile because regulation requires predictive work","Tailor a hybrid approach that delivers iteratively and meets the milestone review","Treat the regulatory review as optional","Stop all iterations during the review period"],
+    answer: 1, explain: "Hybrid tailoring lets the team deliver iteratively while satisfying the fixed regulatory review — synchronizing agile cadence with predictive control points. Dropping agile, ignoring the regulation, or freezing delivery are all unnecessary extremes." },
+
+  { domain: "Agile/Hybrid", q: "The team debates how to know a single user story is complete and acceptable to the customer. What defines that for THAT story specifically?",
+    options: ["The Definition of Done","The story's acceptance criteria","The sprint goal","The product roadmap"],
+    answer: 1, explain: "Acceptance criteria define the conditions for one specific story to be accepted; the Definition of Done is the team-wide quality bar applied to all work. The sprint goal and roadmap operate at higher levels." },
+
+  /* ---------- BUSINESS ENVIRONMENT ---------- */
+
+  { domain: "Business Environment", q: "Partway through the project, market shifts make the original business case no longer valid. What should the project manager do?",
+    options: ["Keep going since the project is already approved and underway","Escalate to the sponsor/governance; the project may be rescoped or terminated","Quietly change the objectives to make the numbers work","Wait until closeout to raise the concern"],
+    answer: 1, explain: "Projects exist to deliver business value; if the business case becomes invalid, the PM escalates to the sponsor/governance who may rescope or terminate it. Pressing on, secretly altering goals, or staying silent wastes investment." },
+
+  { domain: "Business Environment", q: "A new regulation takes effect that affects your product mid-project. What is the project manager's responsibility?",
+    options: ["Continue under the old rules until the project ends","Assess the impact and build compliance into the plan","Treat compliance as optional if it threatens the deadline","Wait for an auditor to flag the gap"],
+    answer: 1, explain: "Compliance is non-negotiable: identify the requirement, assess consequences, and build it into the plan through change control. Ignoring it, deprioritizing it under schedule pressure, or waiting to be caught all create legal and ethical exposure." },
+
+  { domain: "Business Environment", q: "Most of the expected benefits of your project will only materialize months after the product goes live. Who typically owns tracking those benefits, and via what?",
+    options: ["The project manager, via the project charter","The business/operations (benefits owner), via the benefits management plan","The sponsor, via the issue log","The PMO, via the risk register"],
+    answer: 1, explain: "Benefits often accrue after project closure and are tracked by the business/benefits owner per the benefits management plan. The charter authorizes the project, and the issue/risk logs serve other purposes." },
+
+  { domain: "Business Environment", q: "Employees affected by a new system are anxious and resistant to adopting it. Which approach BEST supports the change?",
+    options: ["Mandate use and discipline those who resist","Apply a structured change model (e.g., ADKAR) with communication and involvement","Delay the rollout indefinitely until resistance fades","Deploy quietly so people don't notice the change"],
+    answer: 1, explain: "Organizational change management (ADKAR, Kotter) builds awareness, desire, and ability through communication and involvement. Mandates breed resentment, indefinite delay forfeits benefits, and stealth rollouts erode trust." },
+
+  { domain: "Business Environment", q: "A sponsor asks you to report a yellow/at-risk project as 'green' to avoid scrutiny in an upcoming review. What should you do?",
+    options: ["Report green as requested since the sponsor outranks you","Report status honestly and discuss the real risks with the sponsor","Report green now and correct it only if things get worse","Decline to submit any status for that review"],
+    answer: 1, explain: "Honesty and transparency are core to the PMI Code of Ethics — you report status truthfully even under pressure. Misreporting, deferring the truth, or withholding status all violate integrity and harm decision-making." },
+
+  { domain: "Business Environment", q: "Leadership must choose between two mutually exclusive projects. Project A has an NPV of $250,000; Project B has an NPV of $180,000. Which should they select, all else equal?",
+    options: ["Project B, because its number is lower and therefore safer","Project A, because it has the higher net present value","Neither — NPV cannot be used to compare projects","Both, by splitting the budget evenly"],
+    answer: 1, explain: "When choosing between projects, select the higher NPV — Project A at $250,000 creates more value. A lower NPV isn't 'safer,' NPV is precisely a selection tool, and splitting funds isn't an option for mutually exclusive projects." },
+
+  { domain: "Business Environment", q: "A directive PMO is involved in your project. What level of control should you expect from it?",
+    options: ["Advisory only, providing templates and best practices","Direct management of the project, taking on the PM role or close oversight","Moderate control, requiring compliance with standards","No involvement once the charter is signed"],
+    answer: 1, explain: "A directive PMO actually manages projects directly (high control). Supportive PMOs are advisory (low control) and controlling PMOs require compliance (moderate control)." },
+
+  { domain: "Business Environment", q: "A long-running project is found to no longer align with the organization's revised strategy. What is the appropriate course of action?",
+    options: ["Continue because significant money has already been spent","Escalate to governance, which may redirect or terminate the project","Reduce reporting so the misalignment isn't noticed","Quietly broaden the scope to seem strategically relevant"],
+    answer: 1, explain: "Work must stay aligned to strategy; misalignment is escalated to governance, which may redirect or terminate it. Sunk costs are irrelevant to the go-forward decision, and hiding or padding the project is unethical." }
 
 ];

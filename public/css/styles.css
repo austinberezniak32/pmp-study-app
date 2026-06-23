@@ -76,7 +76,7 @@ header {
 
 /* ---------- Nav ---------- */
 nav {
-  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px;
   max-width: 1040px; margin: 0 auto; padding: 0 16px 12px;
 }
 nav::-webkit-scrollbar { display: none; }
@@ -146,7 +146,7 @@ main { max-width: 1040px; margin: 0 auto; padding: 28px 22px 96px; }
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0; }
 
 /* ---------- Form controls ---------- */
-select, input[type=number] {
+select, input[type=number], input[type=search], input[type=text] {
   background: var(--surface-2); color: var(--text); border: 1px solid var(--line);
   border-radius: 11px; padding: 10px 13px; font-size: .9rem; font-family: inherit; transition: border-color .15s, box-shadow .15s;
 }

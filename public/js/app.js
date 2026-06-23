@@ -1,6 +1,14 @@
 /* PMP Study App — UI logic (vanilla JS, no dependencies) */
 (function () {
   const D = window.PMP_DATA;
+  // Attach alternate question wordings (from variants.js) onto each question.
+  // Keyed by exact original stem; an unmatched key is simply ignored.
+  if (window.PMP_QUESTION_ALTS && Array.isArray(D.questions)) {
+    D.questions.forEach(q => {
+      const a = window.PMP_QUESTION_ALTS[q.q];
+      if (Array.isArray(a) && a.length) q.alt = a;
+    });
+  }
   const EXAM_DATE = new Date("2026-06-27T08:00:00"); // Saturday
   const store = {
     get(k, def) { try { return JSON.parse(localStorage.getItem("pmp_" + k)) ?? def; } catch { return def; } },
@@ -155,13 +163,53 @@
 
   /* ---------- Quiz ---------- */
   let quiz = null, timerInt = null;
+
+  // Real PMP exam (2021 ECO) domain weights. Agile/hybrid is NOT a separate
+  // exam domain — on the real test that content is woven through People and
+  // Process — so we split the Agile/Hybrid bank evenly into those two groups,
+  // then sample to the published 42 / 50 / 8 ratio so a mixed quiz feels like
+  // the real exam blend rather than this bank's raw tag counts.
+  const ECO_WEIGHTS = { People: 0.42, Process: 0.50, "Business Environment": 0.08 };
+  function buildExamWeightedPool(count) {
+    const byTag = t => D.questions.filter(q => q.domain === t);
+    const agile = byTag("Agile/Hybrid");
+    shuffle(agile);
+    const mid = Math.ceil(agile.length / 2);
+    const groups = {
+      People: byTag("People").concat(agile.slice(0, mid)),
+      Process: byTag("Process").concat(agile.slice(mid)),
+      "Business Environment": byTag("Business Environment")
+    };
+    const order = ["People", "Process", "Business Environment"];
+    const targets = order.map(g => Math.round(count * ECO_WEIGHTS[g]));
+    // push any rounding remainder onto Process (the largest, most forgiving slice)
+    targets[1] += count - targets.reduce((a, b) => a + b, 0);
+    const picked = [];
+    order.forEach((g, i) => {
+      const arr = groups[g];
+      shuffle(arr);
+      picked.push(...arr.slice(0, Math.min(targets[i], arr.length)));
+    });
+    shuffle(picked);
+    return picked;
+  }
+
   function startQuiz() {
     const domain = document.getElementById("quiz-domain").value;
     const count = parseInt(document.getElementById("quiz-count").value, 10);
     const timed = document.getElementById("quiz-timed").checked;
-    let pool = (domain === "All" ? D.questions : D.questions.filter(q => q.domain === domain)).slice();
-    shuffle(pool);
-    pool = pool.slice(0, Math.min(count, pool.length)).map(shuffleOptions);
+    const reword = document.getElementById("quiz-reword").checked;
+    store.set("rewordPref", reword);
+    let pool;
+    if (domain === "All") {
+      pool = buildExamWeightedPool(count);
+    } else {
+      pool = D.questions.filter(q => q.domain === domain);
+      shuffle(pool);
+      pool = pool.slice(0, Math.min(count, pool.length));
+    }
+    if (reword) pool = pool.map(rewordQuestion);
+    pool = pool.map(shuffleOptions);
     quiz = { pool, i: 0, correct: 0, answers: [], timed, secs: pool.length * 70 };
     document.getElementById("quiz-setup-area").style.display = "none";
     document.getElementById("quiz-results").style.display = "none";
@@ -289,6 +337,45 @@
     ].map(l => `<div class="line">${l}</div>`).join("");
   }
 
+  /* ---------- Terms & abbreviations ---------- */
+  const TIER_LABEL = { 1: "Must-know — appear constantly", 2: "High value", 3: "Good to know" };
+  function renderTerms() {
+    const host = document.getElementById("terms-list");
+    if (!host) return;
+    const q = (document.getElementById("terms-search").value || "").trim().toLowerCase();
+    const filter = document.getElementById("terms-filter").value;
+    const matchAbbr = a => !q || (a.abbr + " " + a.full + " " + a.note).toLowerCase().includes(q);
+    const matchTerm = t => !q || (t.term + " " + t.def + " " + t.cat).toLowerCase().includes(q);
+
+    let html = "";
+    // Acronyms, grouped by tier
+    [1, 2, 3].forEach(tier => {
+      if (filter !== "all" && filter !== "t" + tier) return;
+      const items = (D.abbreviations || []).filter(a => a.tier === tier && matchAbbr(a));
+      if (!items.length) return;
+      html += `<h3 style="margin:18px 0 8px">${TIER_LABEL[tier]}</h3>`;
+      html += items.map(a => `
+        <div class="formula-card">
+          <div class="fname">${esc(a.abbr)} <span style="color:var(--muted);font-weight:600">— ${esc(a.full)}</span></div>
+          <div class="fnote">${esc(a.note)}</div>
+        </div>`).join("");
+    });
+    // Key terms
+    if (filter === "all" || filter === "terms") {
+      const terms = (D.glossary || []).filter(matchTerm);
+      if (terms.length) {
+        html += `<h3 style="margin:18px 0 8px">Key terms &amp; easily-confused pairs</h3>`;
+        html += terms.map(t => `
+          <div class="card">
+            <div class="domain-tag">${esc(t.cat)}</div>
+            <h3 style="margin:2px 0 6px">${esc(t.term)}</h3>
+            <p style="margin:0">${esc(t.def)}</p>
+          </div>`).join("");
+      }
+    }
+    host.innerHTML = html || `<p class="view-sub">No matches for "${esc(q)}".</p>`;
+  }
+
   /* ---------- Mindset ---------- */
   function renderMindset() {
     document.getElementById("mindset-list").innerHTML = D.mindset.map((m, i) => `
@@ -305,6 +392,14 @@
     shuffle(idx);
     return { ...q, options: idx.map(i => q.options[i]), answer: idx.indexOf(q.answer) };
   }
+  // Swap the stem for a randomly chosen pre-written paraphrase. The scenario,
+  // options, correct answer, and explanation are untouched — only the wording
+  // of the question text changes, so you reason through the concept each time.
+  function rewordQuestion(q) {
+    if (!q.alt || !q.alt.length) return q;
+    const variants = [q.q, ...q.alt];
+    return { ...q, q: variants[Math.floor(Math.random() * variants.length)] };
+  }
 
   /* ---------- Wire up ---------- */
   document.addEventListener("DOMContentLoaded", () => {
@@ -315,8 +410,11 @@
     renderLearn("All");
     renderFormulas();
     renderMindset();
+    renderTerms();
 
     document.getElementById("learn-filter").onchange = e => renderLearn(e.target.value);
+    document.getElementById("terms-search").oninput = renderTerms;
+    document.getElementById("terms-filter").onchange = renderTerms;
 
     document.getElementById("fc-topic").onchange = buildDeck;
     document.getElementById("fc-shuffle").onchange = buildDeck;
@@ -325,6 +423,8 @@
     document.getElementById("fc-known").onclick = toggleKnown;
     buildDeck();
 
+    const rw = document.getElementById("quiz-reword");
+    if (rw) rw.checked = store.get("rewordPref", true);
     document.getElementById("quiz-start").onclick = startQuiz;
     document.getElementById("calc-btn").onclick = calcEVM;
 
